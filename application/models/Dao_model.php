@@ -28,7 +28,7 @@ class Dao_model extends CI_Model{
     public function select_where($nom_table, $conditions){
         $this->db->where($conditions);
         $query = $this->db->get($nom_table);
-        return $query->result();
+        return $query->result_array();
     }
 
 
@@ -96,12 +96,12 @@ class Dao_model extends CI_Model{
         $query = $this->db->query($sql);
 
         if ($query) {
-            return $query->result();
+            return $query->result_array();
         }
 
         return false;
     }
 
 
-    
+
 }

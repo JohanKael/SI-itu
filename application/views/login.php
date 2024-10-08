@@ -15,7 +15,7 @@
             <h1 class="font-semibold text-sky-500 text-3xl">Nom Société</h1>
         </span>
         <div class="flex flex-col gap-8">
-        <h1 class="font-semibold">Please fulfill this form to log in,</h1>
+        <h1 class="font-semibold text-xl">Please fulfill this form to log in,</h1>
             <form action="<?php echo base_url('login_controller/login') ?>" method="post" class="flex flex-col gap-6">
                 <span class="flex flex-col gap-2">
                     <label for="email">Enter email :</label>
@@ -35,6 +35,11 @@
                         <input placeholder="password" type="password" name="pass" id="pass" class="bg-slate-200 rounded-lg w-72 h-10 px-4">
                     </span>
                 </span>
+                <?php if(isset($error)) { ?>
+                    <span class="flex items-center justify-center">
+                        <p style="color: red;"><?php echo $error ?></p>
+                    </span>
+                <?php } ?>
                 <span class="flex justify-end">
                     <a href="" class="hover:border-b hover:border-sky-500 transition text-sm text-sky-500">Forget your password?</a>
                 </span>
