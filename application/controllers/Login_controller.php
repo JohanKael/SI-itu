@@ -34,5 +34,11 @@ class Login_controller extends CI_Controller {
         }
     }
 
+    public function disconnect(){
+        $this->session->unset_userdata('info_user');
+        $this->session->sess_destroy();
+        redirect("login_controller");
+    }
+
 
 }
