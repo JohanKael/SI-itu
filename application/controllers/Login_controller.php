@@ -14,13 +14,13 @@ class Login_controller extends CI_Controller {
 		$this->load->view('login');
 	}
 
-    public function login(){
+    public function login() {
         $email = $this->input->post("email");
         $pwd = $this->input->post("pass");
 
         $conditions = [
-            "email_user"=> $email,
-            "password_user"=> $pwd,
+            "email_user" => $email, 
+            "password_user" => $pwd 
         ];
 
         $response = $this->dao->select_where('v_users', $conditions);
